@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block body %}
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>{{form.name.label}}: {{form.name}}</p>
+        {% for error in form.name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    <p>{{form.date.label}}: {{form.date}}</p>
+    {% for error in form.date.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    {{form.submit}}
+</form>
+{% endblock %}
