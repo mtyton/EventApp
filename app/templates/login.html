@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form method="post" action="">
+    <p>{{form.username.label}}:{{form.username}}</p>
+    <p>{{form.password.label}}:{{form.password}}</p>
+    {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    {{form.submit}}
+</form>
+
+{% endblock %}
